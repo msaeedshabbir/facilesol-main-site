@@ -27,7 +27,7 @@
                             </div>
                             <div class="form-floating mb-3">
                                 <label for="answer">Answer</label>
-                                <input class="form-control" id="answer" type="text" placeholder="Enter Answer" name="answer"value="{{old('answer')}}"/>
+                                <input class="form-control" id="answer" type="text" placeholder="Enter Answer" name="answer" value="{{old('answer')}}"/>
                                 @if ($errors->has('answer'))
                                     <span class="text-danger">
                                         {{$errors->first('answer')}}

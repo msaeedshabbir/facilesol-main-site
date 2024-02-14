@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\backend;
 
 use App\Http\Controllers\Controller;
+use App\Models\backend\FAQs;
 use Illuminate\Http\Request;
 
 class AdminFaqsController extends Controller
@@ -24,26 +25,19 @@ class AdminFaqsController extends Controller
 
     public function submitFaqRecord(Request $request)
     {
-        // $request->validate(
-        //     [
-        //         'first_name' => 'required',
-        //         'last_name' => 'required',
-        //         'email' => 'required|email',
-        //         'password' => 'required',
-        //         'confirm_password' => 'required',
-        //         'contact' => 'required'
-        //     ]
-        //     );
-        // $admin = new Admins();
-        // $admin->first_name = $request['first_name'];
-        // $admin->last_name = $request['last_name'];
-        // $admin->email = $request['email'];
-        // $admin->contact = $request['contact'];
-        // $admin->password = $request['password'];
-        // // $admin->password = md5($request['password']);
-        // $admin->status = 1;
-        // $admin->save();
-        // return redirect('/admin/admins-list');
+        $request->validate(
+            [
+                'question' => 'required',
+                'answer' => 'required'
+            ]
+            );
+        $FAQ_STATUS = 1;
+        $faqs = new FAQs();
+        $faqs->question = $request->question;
+        $faqs->answer = $request->answer;
+        $faqs->status = $FAQ_STATUS;
+        $faqs->save();
+        return back()->withSuccess('FAQ Record Added Successfully');
     }
 
 
