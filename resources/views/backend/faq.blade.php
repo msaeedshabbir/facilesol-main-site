@@ -16,22 +16,42 @@
                                     <th>ID</th>
                                     <th>Question</th>
                                     <th>Answer</th>
+                                    <th>Status</th>
                                     <th width="160px">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-
+                                @foreach ($faqs as $faq)
                                 <tr>
-                                    <td>1</td>
-                                    <td>2</td>
-                                    <td>3</td>
+                                    <td>{{$faq->id}}</td>
+                                    <td>{{$faq->question}}</td>
+                                    <td>{{$faq->answer}}</td>
                                     <td>
-                                        <a href=""><button class="btn btn-success">Edit</button></a>
-                                        <a href="" onClick="return confirm('Are you sure you want to Delete Record')"; title="Delete"><button class="btn btn-danger">Delete</button></a>
+                                        @if($faq->status == 1)
+                                            <a href="">
+                                                <span class="badge badge-success p-2">Active</span>
+                                            </a>
+                                        @else
+                                        <a href="">
+                                            <span class="badge badge-danger p-2">Disabled</span>
+                                        </a>
+                                        @endif
                                     </td>
+                                    <td>
+                                        <a href="#">
+                                            <a href="/admin/faq-edit/{{ $faq->id }}" class="btn btn-success btn-circle btn-sm">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                        </a>
+                                        <form method="post" class="d-inline" action="/admin/faq-delete/{{ $faq->id }}">
+                                            @csrf
+                                            @method('delete')
+                                            <button class="btn btn-danger btn-circle btn-sm" onClick="return confirm('Are you sure you want to Delete Record')"; title="Delete Record"><i class="fas fa-trash"></i></button>
 
+                                        </form>
+                                    </td>
                                 </tr>
-
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
