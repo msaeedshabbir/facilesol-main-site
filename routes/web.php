@@ -16,6 +16,7 @@ use App\Http\Controllers\frontend\POSDetailsController;
 //Backend Controllers
 use App\Http\Controllers\backend\AdminLoginController;
 use App\Http\Controllers\backend\AdminHomeController;
+use App\Http\Controllers\backend\AdminProjectsController;
 use App\Http\Controllers\backend\TeamMemberController;
 
 /*
@@ -52,6 +53,8 @@ Route::post('/contact', [ContactController::class, 'submitMessage']);
 Route::get('/admin/login', [AdminLoginController::class, 'index']);
 Route::get('/admin', [AdminHomeController::class, 'index']);
 
+
+//Admin Management
 Route::get('/admin/register', [AdminHomeController::class, 'registerAdmin'])->name('admin.create');
 Route::post('/admin/register', [AdminHomeController::class, 'submitAdminRecord']);
 Route::get('/admin/admins-list', [AdminHomeController::class, 'showAdminRecord'])->name('admin.show');
@@ -78,3 +81,6 @@ Route::get('/admin/faq-edit/{id}', [AdminFaqsController::class, 'editFAQ'])->nam
 Route::put('/admin/faq-edit/{id}', [AdminFaqsController::class, 'updateFAQ'])->name('faq.update');
 Route::delete('/admin/faq-delete/{id}', [AdminFaqsController::class, 'deleteFAQ'])->name('faq.delete');
 
+// Project Management
+
+Route::get('/admin/projects', [AdminProjectsController::class, 'index'])->name('project.add');

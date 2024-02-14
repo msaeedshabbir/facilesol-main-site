@@ -66,8 +66,8 @@
                 </a>
                 <div id="collapseProjects" class="collapse" aria-labelledby="projects" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="projects.php">Projects</a>
-                        <a class="collapse-item" href="project-add.php">Add Project</a>
+                        <a class="collapse-item" href="{{url('/admin/projects')}}">Projects</a>
+                        <a class="collapse-item" href="{{url('/admin/project-add')}}">Add Project</a>
                     </div>
                 </div>
             </li>
