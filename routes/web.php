@@ -74,3 +74,7 @@ Route::delete('/admin/team-delete/{id}', [TeamMemberController::class, 'deleteTe
 Route::get('/admin/faqs', [AdminFaqsController::class, 'index'])->name('faq.show');
 Route::get('/admin/faq-add', [AdminFaqsController::class, 'addFAQ'])->name('faq.add');
 Route::post('/admin/faq-add', [AdminFaqsController::class, 'submitFaqRecord']);
+Route::get('/admin/faq-edit/{id}', [AdminFaqsController::class, 'editFAQ'])->name('faq.edit');
+Route::put('/admin/faq-edit/{id}', [AdminFaqsController::class, 'updateFAQ'])->name('faq.update');
+Route::delete('/admin/faq-delete/{id}', [AdminFaqsController::class, 'deleteFAQ'])->name('faq.delete');
+
