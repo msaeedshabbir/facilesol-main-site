@@ -5,6 +5,8 @@ namespace App\Http\Controllers\backend;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\backend\Admins;
+use App\Models\backend\FAQs;
+use App\Models\backend\Team;
 
 class AdminHomeController extends Controller
 {
@@ -13,7 +15,10 @@ class AdminHomeController extends Controller
      */
     public function index()
     {
-        return view('backend.index');
+        $TotalAdmins = Admins::count();
+        $TotalTeam = Team::count();
+        $TotalFAQs = FAQs::count();
+        return view('backend.index', compact('TotalAdmins', 'TotalTeam', 'TotalFAQs'));
     }
 
 

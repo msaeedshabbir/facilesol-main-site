@@ -10,7 +10,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-white mb-1">
                                             Admins</div>
-                                        <div class="h5 mb-0 font-weight-bold text-white">1</div>
+                                        <div class="h5 mb-0 font-weight-bold text-white">{{ $TotalAdmins }}</div>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-user fa-2x text-gray-300"></i>
@@ -65,7 +65,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-white mb-1">Team Members</div>
                                         <div class="h5 mb-0 font-weight-bold text-white">
-                                            4
+                                            {{ $TotalTeam }}
                                         </div>
                                     </div>
                                     <div class="col-auto">
@@ -85,7 +85,7 @@
                                         <div class="text-xs font-weight-bold text-white mb-1">
                                             FAQs</div>
                                         <div class="h5 mb-0 font-weight-bold text-white">
-                                            5
+                                            {{ $TotalFAQs }}
                                         </div>
                                     </div>
                                     <div class="col-auto">
