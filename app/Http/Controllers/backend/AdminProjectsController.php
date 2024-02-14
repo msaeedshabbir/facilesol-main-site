@@ -12,4 +12,10 @@ class AdminProjectsController extends Controller
     {
         return view('backend.projects', ['project'=>Projects::get()]);
     }
+
+    public function addProject()
+    {
+        return view('backend.project-add');
+    }
+
 }

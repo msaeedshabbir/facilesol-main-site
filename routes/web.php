@@ -82,5 +82,9 @@ Route::put('/admin/faq-edit/{id}', [AdminFaqsController::class, 'updateFAQ'])->n
 Route::delete('/admin/faq-delete/{id}', [AdminFaqsController::class, 'deleteFAQ'])->name('faq.delete');
 
 // Project Management
-
 Route::get('/admin/projects', [AdminProjectsController::class, 'index'])->name('project.add');
+Route::get('/admin/project-add', [AdminProjectsController::class, 'addProject'])->name('project.add');
+Route::post('/admin/project-add', [AdminProjectsController::class, 'submitProjectRecord']);
+Route::get('/admin/project-edit/{id}', [AdminProjectsController::class, 'editProject'])->name('project.edit');
+Route::put('/admin/project-edit/{id}', [AdminProjectsController::class, 'updateProject'])->name('project.update');
+Route::delete('/admin/project-delete/{id}', [AdminProjectsController::class, 'deleteProject'])->name('project.delete');

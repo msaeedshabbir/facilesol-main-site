@@ -101,7 +101,7 @@
                             </div>
                             <div class="form-floating mb-3">
                                 <label for="image">Image</label>
-                                <input class="form-control" id="image" type="file" name="image" value="{{old('image', $team->image)}}">
+                                <input class="form-control" id="image" type="file" name="image" value="{{old('image', $team->image)}}" style="padding-bottom:38px">
                                 @if ($errors->has('image'))
                                     <span class="text-danger">
                                         {{$errors->first('image')}}
