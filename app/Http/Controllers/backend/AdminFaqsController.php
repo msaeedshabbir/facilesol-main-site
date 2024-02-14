@@ -41,21 +41,35 @@ class AdminFaqsController extends Controller
         return back()->withSuccess('FAQ Record Added Successfully');
     }
 
-
-    public function showFAQs()
+    public function editFAQ($id)
     {
+        // dd($id);
+        $faqs = FAQs::where('id', $id)->first();
 
-         $faqs = FAQs::all();
-            dd($faqs);
-
-    //     echo "<pre>";
-    //     print_r($admins->toArray()); //toArry runs only when we have some data in DB
-    //    echo  "</pre>";
-    //     die;
-        // $data = compact('admins');
-        // return view('backend/admins-list')->with($data);
+        return view('backend.faq-edit', ['faqs' => $faqs]);
 
     }
+
+    public function updateFAQ(Request $request, $id)
+    {
+
+        $request->validate(
+            [
+                'question' => 'required',
+                'answer' => 'required'
+            ]
+            );
+
+        $faqs = FAQs::where('id', $id)->first();
+        $FAQ_STATUS = 1;
+
+        $faqs->question = $request->question;
+        $faqs->answer = $request->answer;
+        $faqs->status = $FAQ_STATUS;
+        $faqs->save();
+        return back()->withSuccess('Member Record Updated Successfully');
+    }
+
 
     public function deleteFAQ($id)
     {
@@ -64,9 +78,5 @@ class AdminFaqsController extends Controller
         return back()->withSuccess('Member Record Deleted Successfully');
     }
 
-    public function updateFAQ(){
-
-
-    }
 
 }
