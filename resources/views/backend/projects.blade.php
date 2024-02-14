@@ -38,7 +38,7 @@
                                         <img src="/backend/images/projects/{{$project->image}}" class="rounded-circle" width="50px" height="50px" alt="Image Not Found">
                                     </td>
                                     <td>
-                                        @if($team->status == 1)
+                                        @if($project->status == 1)
                                             <a href="">
                                                 <span class="badge badge-success p-2">Active</span>
                                             </a>
