@@ -13,11 +13,12 @@
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th>ID</th>
-                                    <th>Full Name</th>
-                                    <th>Designation</th>
-                                    <th>Profile</th>
+                                    <th>Title</th>
+                                    <th>Details</th>
+                                    <th>Category</th>
+                                    <th>Client</th>
+                                    <th>Link</th>
                                     <th>Image</th>
                                     <th>Status</th>
                                     <th width="160px">Actions</th>
@@ -27,15 +28,13 @@
                                 @foreach ($project as $project)
                                 <tr>
                                     <td>{{ $project->id }}</td>
+                                    <td>{{ $project->title }}</td>
+                                    <td>{{ $project->details }}</td>
+                                    <td>{{ $project->category }}</td>
+                                    <td>{{ $project->client }}</td>
+                                    <td>{{ $project->link }}</td>
                                     <td>
-                                        <a class="text-dark" href="/admin/team-member-details/{{ $project->id }}">
-                                            {{ $project->fullname }}
-                                        </a>
-                                    </td>
-                                    <td>{{ $project->designation }}</td>
-                                    <td>{{ $project->shortintro }}</td>
-                                    <td>
-                                        <img src="/backend/images/projects/{{$project->image}}" class="rounded-circle" width="50px" height="50px" alt="Image Not Found">
+                                        <img src="/backend/images/projects/{{$project->image}}" class="rounded-circle border border-primary" width="50px" height="50px" alt="Image Not Found">
                                     </td>
                                     <td>
                                         @if($project->status == 1)

@@ -37,7 +37,7 @@
                             </div>
                             <div class="form-floating mb-3">
                                 <label for="link">Link</label>
-                                <input class="form-control" id="link" type="text" placeholder="Enter Project Link" name="link" value="{{old('designation')}}">
+                                <input class="form-control" id="link" type="text" placeholder="Enter Project Link" name="link" value="{{old('link')}}">
                                 @if ($errors->has('link'))
                                     <span class="text-danger">
                                         {{$errors->first('link')}}
