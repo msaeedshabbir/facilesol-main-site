@@ -13,7 +13,8 @@ class AdminFaqsController extends Controller
      */
     public function index()
     {
-        return view('backend.faq');
+        return view('backend.faq', ['faqs'=>FAQs::get()]);
+
     }
 
 
@@ -41,13 +42,11 @@ class AdminFaqsController extends Controller
     }
 
 
-    public function showAdminRecord()
+    public function showFAQs()
     {
 
-        // $admins = Admins::all();
-
-        // Calling the helper function for testing data
-        // testData($admins);
+         $faqs = FAQs::all();
+            dd($faqs);
 
     //     echo "<pre>";
     //     print_r($admins->toArray()); //toArry runs only when we have some data in DB
@@ -58,32 +57,16 @@ class AdminFaqsController extends Controller
 
     }
 
-        /**
-     * Remove the specified resource from storage.
-     */
-    public function deleteAdminRecord(string $id)
+    public function deleteFAQ($id)
     {
-        // $data  = Admins::find($id);
-        // if(!is_null($data)){
-        //     $data->delete();
-        // }
-        // $data = compact('admins');
-        // return view('backend/admins-list')->with($data);
+        $team = FAQs::where('id', $id)->first();
+        $team->delete();
+        return back()->withSuccess('Member Record Deleted Successfully');
+    }
+
+    public function updateFAQ(){
 
 
     }
 
-    public function editAdminRecord($id)
-    {
-
-        // $data  = Admins::find($id);
-        // if(is_null($data)){
-        //     return view('backend.admins-list');
-        // } else {
-        //     $url = url('/admin/update') . "/" . $id;
-        //     $data = compact('admins', 'url');
-        //     return view('backend.admin-add')->with($data);
-        // }
-
-    }
 }
