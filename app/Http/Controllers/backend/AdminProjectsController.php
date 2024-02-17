@@ -51,68 +51,62 @@ class AdminProjectsController extends Controller
         return back()->withSuccess('Project Record Added Successfully');
     }
 
-    public function editTeam($id)
+    public function editProject($id)
     {
         // dd($id);
-        $team = Team::where('id', $id)->first();
+        $projects = Projects::where('id', $id)->first();
 
-        return view('backend.team-edit', ['team' => $team]);
+        return view('backend.project-edit', ['project' => $projects]);
 
     }
 
-    public function updateTeam(Request $request, $id)
+    public function updateProject(Request $request, $id)
     {
 
         $request->validate(
             [
-                'fullname' => 'required|min:3',
-                'email' => 'required|email',
-                'designation' => 'required|min:3',
-                'shortintro' => 'required|min:10',
-                'longintro' => 'required|min:20',
-                'linkedin' => 'required|min:6',
-                'insta' => 'required|min:6',
-                'twitter' => 'required|min:6',
-                'facebook' => 'required|min:6',
+                'title' => 'required|min:3',
+                'details' => 'required|min:10',
+                'link' => 'required|min:3',
+                'category' => 'required|min:3',
+                'technology' => 'required|min:3',
+                'client' => 'required|min:3',
                 'image' => 'nullable|mimes:jpeg,jpg,png|max:10000'
             ]
             );
 
-        $team = Project::where('id', $id)->first();
-        $ADMIN_STATUS = 1;
+        $team = Projects::where('id', $id)->first();
+        $PROJECT_STATUS = 1;
         if(isset($request->image))
         {
             $ImageName = 'fs_team_' . time() . '.' . $request->image->extension();
-            $request->image->move(public_path('backend/images/team'), $ImageName);
+            $request->image->move(public_path('backend/images/projects'), $ImageName);
             $team->image = $ImageName;
         }
-        $team->fullname = $request->fullname;
-        $team->email = $request->email;
-        $team->designation = $request->designation;
-        $team->shortintro = $request->shortintro;
-        $team->longintro = $request->longintro;
-        $team->linkedin = $request->linkedin;
-        $team->insta = $request->insta;
-        $team->twitter = $request->twitter;
-        $team->facebook = $request->facebook;
-        $team->status = $ADMIN_STATUS;
+        $team->title = $request->title;
+        $team->details = $request->details;
+        $team->link = $request->link;
+        $team->category = $request->category;
+        $team->technology = $request->technology;
+        $team->client = $request->client;
+        $team->status = $PROJECT_STATUS;
         $team->save();
-        return back()->withSuccess('Member Record Updated Successfully');
+        return back()->withSuccess('Project Record Updated Successfully');
     }
 
 
-    public function deleteTeam($id)
+    public function deleteProject($id)
     {
-        $team = Team::where('id', $id)->first();
-        $team->delete();
+        $project = Projects::where('id', $id)->first();
+        $project->delete();
         return back()->withSuccess('Member Record Deleted Successfully');
     }
 
-    public function showTeamMember($id)
-    {
-        $team = Team::where('id', $id)->first();
-        return view('backend.team-member-details', ['team' => $team]);
-    }
+    // public function showTeamMember($id)
+    // {
+    //     $team = Projects::where('id', $id)->first();
+    //     return view('backend.team-member-details', ['team' => $team]);
+    // }
 
 
 }

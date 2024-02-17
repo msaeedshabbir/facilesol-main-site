@@ -49,11 +49,11 @@
                                     </td>
                                     <td>
                                         <a href="#">
-                                            <a href="/admin/team-edit/{{ $project->id }}" class="btn btn-success btn-circle btn-sm">
+                                            <a href="/admin/project-edit/{{ $project->id }}" class="btn btn-success btn-circle btn-sm">
                                                 <i class="fas fa-edit"></i>
                                             </a>
                                         </a>
-                                        <form method="post" class="d-inline" action="/admin/team-delete/{{ $project->id }}">
+                                        <form method="post" class="d-inline" action="/admin/project-delete/{{ $project->id }}">
                                             @csrf
                                             @method('delete')
                                             <button class="btn btn-danger btn-circle btn-sm" onClick="return confirm('Are you sure you want to Delete Record')"; title="Delete Record"><i class="fas fa-trash"></i></button>
