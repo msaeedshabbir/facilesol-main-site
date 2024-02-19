@@ -34,7 +34,7 @@
             </a>
             <br>
             <hr class="sidebar-divider my-0">
-            <li class="nav-item active">
+            <li class="nav-item  {{ Request::is('admin') ? 'active':''}}">
                 <a class="nav-link" href="{{url('/admin')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -43,7 +43,7 @@
             <div class="sidebar-heading">
                 Main Menu
             </div>
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('admin/register', 'admin/admins-list', 'admin/password-reset') ? 'active':''}}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAuthentication"
                     aria-expanded="true" aria-controls="collapseAuthentication">
                     <i class="fas fa-fw fa-fingerprint"></i>
@@ -58,7 +58,7 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('admin/projects', 'admin/project-add') ? 'active':''}}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProjects"
                     aria-expanded="true" aria-controls="collapseProjects">
                     <i class="fas fa-fw fa-file"></i>
@@ -71,7 +71,7 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('admin/team', 'admin/team-add') ? 'active':''}}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTeam"
                     aria-expanded="true" aria-controls="collapseTeam">
                     <i class="fas fa-fw fa-id-card"></i>
@@ -84,7 +84,7 @@
                     </div>
                 </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is('admin/faqs', 'admin/faq-add') ? 'active':''}}">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseFaqs"
                     aria-expanded="true" aria-controls="collapseFaqs">
                     <i class="fas fa-fw fa-comments"></i>

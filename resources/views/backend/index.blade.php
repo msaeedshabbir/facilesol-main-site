@@ -1,5 +1,6 @@
 @extends('backend.layouts.main')
 @section('title', 'Home')
+{{-- @section('home', 'active') --}}
 @section('main-container')
             <div class="container-fluid">
                 <br>
