@@ -53,6 +53,7 @@ Route::post('/contact', [ContactController::class, 'submitMessage']);
 //Login Page
 Route::get('/admin/login', [AdminLoginController::class, 'index']);
 Route::post('/admin/login', [AdminLoginController::class, 'onLogin']);
+Route::get('/admin/logout', [AdminLoginController::class, 'logoutAdmin']);
 
 
 Route::get('/admin', [AdminHomeController::class, 'index']);

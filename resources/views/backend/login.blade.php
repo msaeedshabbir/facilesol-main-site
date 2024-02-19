@@ -49,7 +49,7 @@
                                 </div>
                                 @if (session()->has('error'))
                                     <div class="alert alert-danger">
-                                        <p>{{ session()->get('error') }}</p>
+                                        <p>{{ session()->get('error'); }}</p>
                                     </div>
                                 @endif
                                 <form class="user" method="post" action="{{ url('/admin/login') }}">
