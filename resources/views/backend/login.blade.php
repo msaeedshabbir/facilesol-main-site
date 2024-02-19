@@ -47,6 +47,11 @@
                                     <img src="{{url('backend/images/logo.svg')}}" height="70px" alt="{{config('app.name')}}"><br><br>
                                     <h1 class="h5 text-gray-900 mb-4">Login Area</h1>
                                 </div>
+                                @if (session()->has('error'))
+                                    <div class="alert alert-danger">
+                                        <p>{{ session()->get('error') }}</p>
+                                    </div>
+                                @endif
                                 <form class="user" method="post" action="{{ url('/admin/login') }}">
                                     @csrf
                                     <div class="form-group">
