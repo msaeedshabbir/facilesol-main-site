@@ -99,7 +99,7 @@
             </li>
             <hr class="sidebar-divider d-none d-md-block">
             <li class="nav-item">
-                <a class="nav-link" href="logout.php">
+                <a class="nav-link" href="logout.blade.php">
                     <i class="fas fa-power-off"></i>
                     <span>Logout</span></a>
             </li>
