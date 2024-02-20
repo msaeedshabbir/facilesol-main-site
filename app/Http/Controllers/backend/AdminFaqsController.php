@@ -45,9 +45,7 @@ class AdminFaqsController extends Controller
     {
         // dd($id);
         $faqs = FAQs::where('id', $id)->first();
-
         return view('backend.faq-edit', ['faqs' => $faqs]);
-
     }
 
     public function updateFAQ(Request $request, $id)
