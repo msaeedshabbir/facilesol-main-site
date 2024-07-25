@@ -44,15 +44,10 @@
             <div class="col-xl-6 col-lg-7 mobt-60">
 				<form action="{{ url('/contact') }}" method="post" class="site-form site-form-style-two p-0 position-relative">
                     @csrf
-                    {{-- <pre> --}}
-                        {{-- @php
-                            print_r($errors->all);
-                        @endphp --}}
-                    {{-- </pre> --}}
                     <div class="row">
                         <div class="col-lg-6">
 							<label>Your name <i class="fas fa-asterisk"></i></label>
-                            <input type="text" name="name" value="{{ old('name') }}">
+                            <input type="text" name="name" value="{{ old('fullname') }}">
                             <span class="text-danger">
                                 @error('name')
                                     {{$message}}

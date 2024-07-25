@@ -27,118 +27,24 @@
 			</div>
 		</div>
 		<div class="row mt-60 team-dark-wrap gy-4 gy-lg-0">
-			<div class="col-lg-3 col-md-6 p-lg-0">
+            @foreach ($team as $teamMember)
+            <div class="col-lg-3 col-md-6 p-lg-0">
 				<div class="team-dark-box position-relative overflow-hidden">
-					<img class="w-100" src="{{url('frontend/images/team/team-dark-1.png')}}" alt="Image Not Found">
+					<img class="w-100" src="backend/images/team/{{ $teamMember->image }}" alt="Image Not Found">
 					<div class="team-dark-box-info position-absolute w-100">
-						<h2 class="text-white"><a href="{{url('/team')}}">Arlene McCoy</a></h2>
-						<p class="text-white">CEO @ Company</p>
+						<h2 class="text-white"><a href="{{url('/team')}}">{{ $teamMember->fullname }}</a></h2>
+						<p class="text-white">{{ $teamMember->designation }}</p>
 					</div>
 					<ul class="team-dark-social position-absolute">
-						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+						<li><a href="{{ $teamMember->twitter }}"><i class="fab fa-twitter"></i></a></li>
+						<li><a href="{{ $teamMember->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a href="{{ $teamMember->insta }}"><i class="fab fa-instagram"></i></a></li>
+						<li><a href="{{ $teamMember->linkedin }}"><i class="fab fa-linkedin-in"></i></a></li>
 					</ul>
 				</div>
 			</div>
-			<div class="col-lg-3 col-md-6 p-lg-0">
-				<div class="team-dark-box position-relative overflow-hidden">
-					<img class="w-100" src="{{url('frontend/images/team/team-dark-2.png')}}" alt="Image Not Found">
-					<div class="team-dark-box-info position-absolute w-100">
-						<h2 class="text-white"><a href="team-details.html">Arlene McCoy</a></h2>
-						<p class="text-white">CEO @ Company</p>
-					</div>
-					<ul class="team-dark-social position-absolute">
-						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 p-lg-0">
-				<div class="team-dark-box position-relative overflow-hidden">
-					<img class="w-100" src="{{url('frontend/images/team/team-dark-3.png')}}" alt="Image Not Found">
-					<div class="team-dark-box-info position-absolute w-100">
-						<h2 class="text-white"><a href="team-details.html">Arlene McCoy</a></h2>
-						<p class="text-white">CEO @ Company</p>
-					</div>
-					<ul class="team-dark-social position-absolute">
-						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 p-lg-0">
-				<div class="team-dark-box position-relative overflow-hidden">
-					<img class="w-100" src="{{url('frontend/images/team/team-dark-4.png')}}" alt="Image Not Found">
-					<div class="team-dark-box-info position-absolute w-100">
-						<h2 class="text-white"><a href="team-details.html">Arlene McCoy</a></h2>
-						<p class="text-white">CEO @ Company</p>
-					</div>
-					<ul class="team-dark-social position-absolute">
-						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 p-lg-0">
-				<div class="team-dark-box position-relative overflow-hidden">
-					<img class="w-100" src="{{url('frontend/images/team/team-dark-5.png')}}" alt="Image Not Found">
-					<div class="team-dark-box-info position-absolute w-100">
-						<h2 class="text-white"><a href="team-details.html">Arlene McCoy</a></h2>
-						<p class="text-white">CEO @ Company</p>
-					</div>
-					<ul class="team-dark-social position-absolute">
-						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 p-lg-0">
-				<div class="team-dark-box position-relative overflow-hidden">
-					<img class="w-100" src="{{url('frontend/images/team/team-dark-6.png')}}" alt="Image Not Found">
-					<div class="team-dark-box-info position-absolute w-100">
-						<h2 class="text-white"><a href="team-details.html">Arlene McCoy</a></h2>
-						<p class="text-white">CEO @ Company</p>
-					</div>
-					<ul class="team-dark-social position-absolute">
-						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 p-lg-0">
-				<div class="team-dark-box position-relative overflow-hidden">
-					<img class="w-100" src="{{url('frontend/images/team/team-dark-7.png')}}" alt="Image Not Found">
-					<div class="team-dark-box-info position-absolute w-100">
-						<h2 class="text-white"><a href="team-details.html">Arlene McCoy</a></h2>
-						<p class="text-white">CEO @ Company</p>
-					</div>
-					<ul class="team-dark-social position-absolute">
-						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6 p-lg-0">
-				<div class="team-dark-box position-relative overflow-hidden">
-					<img class="w-100" src="{{url('frontend/images/team/team-dark-8.png')}}" alt="Image Not Found">
-					<div class="team-dark-box-info position-absolute w-100">
-						<h2 class="text-white"><a href="team-details.html">Arlene McCoy</a></h2>
-						<p class="text-white">CEO @ Company</p>
-					</div>
-					<ul class="team-dark-social position-absolute">
-						<li><a href="#"><i class="fab fa-twitter"></i></a></li>
-						<li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-					</ul>
-				</div>
-			</div>
+			@endforeach
+
 		</div>
 	</div>
 </div>
